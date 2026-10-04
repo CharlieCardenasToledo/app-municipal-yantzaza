@@ -140,7 +140,7 @@ final class MarketplaceScreen extends ConsumerWidget {
           category: 'Emprendimientos',
           rating: '4.9',
           distance: 'Yantzaza • productores y artesanos',
-          imageUrl: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=85',
+          imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85',
           onTap: () => context.push('/marketplace/farmacia'),
         ),
       ],

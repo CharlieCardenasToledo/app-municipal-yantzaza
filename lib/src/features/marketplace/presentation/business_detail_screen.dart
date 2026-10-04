@@ -145,7 +145,7 @@ const _businesses = <String, _BusinessData>{
     rating: '4.9',
     address: 'Yantzaza · productores y artesanos',
     description: 'Café, cacao y chocolates artesanales del valle, junto con artesanías en balsa y tagua elaboradas por familias yantzacenses.',
-    imageUrl: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85',
     icon: Icons.palette_rounded,
     products: [
       _Product('Chocolate artesanal', 'Cacao fino de aroma del cantón', '\$5.00', Icons.restaurant_rounded),
