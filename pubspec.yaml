@@ -1,0 +1,44 @@
+name: mi_yantzaza
+description: "Mi Yantzaza - Servicios y participación ciudadana del GAD Municipal de Yantzaza"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^3.4.3
+
+  # Routing
+  go_router: ^17.5.0
+
+  # Fonts
+  google_fonts: ^8.2.1
+
+  # Maps
+  flutter_map: ^8.3.2
+  latlong2: ^0.10.1
+
+  # Networking
+  dio: ^5.11.1
+  url_launcher: ^6.3.3
+
+  # Icons
+  cupertino_icons: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Lints
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/tourism/

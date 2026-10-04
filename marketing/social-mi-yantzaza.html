@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redes sociales · Mi Yantzaza</title>
+  <style>
+    :root { --deep:#073d22; --green:#0a5a33; --mint:#d3f0da; --sand:#ffe98a; --cream:#f7f6ef; --white:#fffdf7; --muted:#45534a; }
+    * { box-sizing:border-box; } html,body { margin:0; background:#cbd4c9; font-family:Inter,system-ui,sans-serif; }
+    .slide { width:100%; min-height:100svh; padding:36px 24px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; }
+    .slide:not(:first-of-type) { display:none; } .slide:target { display:flex !important; }
+    .slide::after { content:""; position:absolute; width:250px; height:250px; border-radius:50%; border:1px solid rgba(211,239,225,.24); right:-90px; top:80px; box-shadow:0 0 0 22px rgba(211,239,225,.06),0 0 0 44px rgba(211,239,225,.04); }
+    .slide.one { color:var(--white); background:linear-gradient(180deg,rgba(7,61,34,.75),rgba(7,61,34,.98)),url('../assets/images/tourism/panoramica-nocturna.jpg') center/cover; }
+    .slide.two { color:var(--deep); background:var(--cream); }
+    .slide.three { color:var(--white); background:linear-gradient(150deg,rgba(7,61,34,.96),rgba(10,90,51,.78)),url('../assets/images/tourism/chicana.jpg') center/cover; }
+    .brand { position:relative; z-index:1; display:flex; justify-content:space-between; align-items:center; font-weight:900; letter-spacing:.04em; font-size:15px; }
+    .brand span { color:var(--mint); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    .slide.two .brand span { color:var(--green); }
+    .content { position:relative; z-index:1; max-width:690px; }
+    .kicker { color:var(--mint); text-transform:uppercase; letter-spacing:.13em; font-size:12px; font-weight:900; }
+    .slide.two .kicker { color:var(--green); }
+    h1 { font-size:clamp(57px,16vw,104px); line-height:.87; letter-spacing:-.07em; margin:22px 0 20px; }
+    h2 { font-size:clamp(31px,8vw,56px); line-height:.98; letter-spacing:-.055em; margin:18px 0; }
+    p { font-size:18px; line-height:1.42; max-width:590px; color:rgba(255,253,247,.87); }
+    .slide.two p { color:var(--muted); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
+    .chip { padding:9px 13px; border-radius:99px; background:rgba(255,255,255,.13); color:var(--white); font-size:13px; font-weight:800; }
+    .slide.two .chip { background:var(--mint); color:var(--green); }
+    .bottom { position:relative; z-index:1; display:flex; gap:12px; align-items:end; }
+    .bottom img { width:92px; height:92px; object-fit:contain; }
+    .bottom strong { display:block; font-size:20px; margin-bottom:4px; }
+    .bottom small { font-size:13px; line-height:1.35; color:var(--mint); }
+    .slide.two .bottom small { color:var(--muted); }
+    .feature-list { margin:26px 0 0; display:grid; gap:13px; }
+    .feature { display:flex; gap:12px; align-items:center; padding:15px; border-radius:18px; background:var(--white); box-shadow:0 8px 22px rgba(7,61,34,.08); }
+    .feature img { width:52px; height:52px; object-fit:contain; } .feature strong { color:var(--deep); font-size:18px; } .feature span { display:block; color:var(--muted); font-size:13px; margin-top:3px; }
+    .slide-number { position:relative; z-index:1; font-size:12px; font-weight:800; opacity:.75; letter-spacing:.12em; }
+    .app-mini { display:grid; grid-template-columns:1fr; gap:12px; margin-top:20px; }
+    .app-mini img { display:block; object-fit:cover; object-position:top;  width:100%; aspect-ratio:390 / 844; border:0; border-radius:16px; background:var(--white); box-shadow:0 12px 24px rgba(7,61,34,.14); }
+    .app-mini-label { color:var(--green); font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:.11em; }
+    @media (min-width:700px) { .slide { width:1080px; min-height:1350px; margin:auto; padding:76px 82px; } p { font-size:25px; } .feature-list { grid-template-columns:1fr 1fr; } .feature { min-height:120px; } .app-mini { grid-template-columns:1fr 1fr; max-width:640px; } }
+  </style>
+</head>
+<body>
+  <section id="slide-1" class="slide one">
+    <div class="brand">MI YANTZAZA <span>Propuesta de gobierno municipal</span></div>
+    <div class="content"><div class="kicker">Una ciudad más cercana</div><h1>Mi<br>Yantzaza</h1><h2>La ciudad que te escucha, te informa y te acompaña.</h2><p>Una plataforma para acercar los servicios municipales a cada barrio, cada familia y cada visitante.</p><div class="chips"><span class="chip">Servicios</span><span class="chip">Participación</span><span class="chip">Turismo</span></div></div>
+    <div class="bottom"><img src="../assets/images/amazonia-tucan-clay.png" alt=""><div><strong>Conectados con Yantzaza</strong><small>Tecnología al servicio de la ciudadanía.</small></div></div><div class="slide-number">01 / 04</div>
+  </section>
+  <section id="slide-2" class="slide two">
+    <div class="brand">MI YANTZAZA <span>Más simple. Más cercana.</span></div>
+    <div class="content"><div class="kicker">Así funciona la propuesta</div><h2>Todo lo que necesitas para participar y disfrutar tu ciudad.</h2><div class="feature-list"><div class="feature"><img src="../assets/images/amazonia-servicios-clay.png" alt=""><div><strong>Servicios en un solo lugar</strong><span>Trámites, pagos e información clara.</span></div></div><div class="feature"><img src="../assets/images/amazonia-reportar-clay.png" alt=""><div><strong>Tu voz sí cuenta</strong><span>Reportes con foto, ubicación y seguimiento.</span></div></div><div class="feature"><img src="../assets/images/amazonia-rutas-clay.png" alt=""><div><strong>Una ciudad que se mueve</strong><span>Rutas, recolectores y tiempos de llegada.</span></div></div><div class="feature"><img src="../assets/images/amazonia-tucan-clay.png" alt=""><div><strong>Yantzaza se descubre</strong><span>Balnearios, cultura shuar y turismo local.</span></div></div></div></div>
+    <div class="bottom"><img src="../assets/images/amazonia-avatar-clay.png" alt=""><div><strong>Participar también es construir.</strong><small>Una gestión que escucha y responde.</small></div></div><div class="slide-number">02 / 04</div>
+  </section>
+  <section id="slide-3" class="slide three">
+    <div class="brand">MI YANTZAZA <span>Valle de las Luciérnagas</span></div>
+    <div class="content"><div class="kicker">Nuestro territorio también importa</div><h2>Yantzaza se vive en sus ríos.</h2><p>Una guía para compartir nuestros lugares, proteger nuestro entorno y hacer que cada visitante se sienta bienvenido.</p><div class="chips"><span class="chip">Chicaña</span><span class="chip">Balnearios</span><span class="chip">17 destinos</span></div></div>
+    <div class="bottom"><img src="../assets/images/amazonia-colibri-clay.png" alt=""><div><strong>Cuando Yantzaza avanza, todos participamos.</strong><small>Conoce la propuesta de gobierno municipal.</small></div></div><div class="slide-number">03 / 04</div>
+  </section>
+  <section id="slide-4" class="slide two">
+    <div class="brand">MI YANTZAZA <span>Una experiencia cercana</span></div>
+    <div class="content"><div class="kicker">Mira cómo funciona</div><h2>La propuesta también se puede tocar.</h2><div class="app-mini-label">Inicio y reportes ciudadanos</div><div class="app-mini"><img src="real-app-dashboard.png" alt="Captura de inicio"><img src="real-app-incidents.png" alt="Captura de reportes"></div></div>
+    <div class="bottom"><img src="../assets/images/amazonia-avatar-clay.png" alt=""><div><strong>Una gestión que se entiende.</strong><small>Servicios públicos con tecnología y sentido humano.</small></div></div><div class="slide-number">04 / 04</div>
+  </section>
+  <script>
+    function showSlide() {
+      const activeId = (window.location.hash || '#slide-1').slice(1);
+      document.querySelectorAll('.slide').forEach((slide) => { slide.style.display = slide.id === activeId ? 'flex' : 'none'; });
+    }
+    window.addEventListener('hashchange', showSlide);
+    showSlide();
+  </script>
+</body>
+</html>

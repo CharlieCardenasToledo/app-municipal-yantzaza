@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flyer · Mi Yantzaza</title>
+  <style>
+    :root {
+      --green-950: #073d22;
+      --green-800: #0a5a33;
+      --green-500: #0c8e36;
+      --mint: #d3f0da;
+      --cream: #f7f6ef;
+      --sand: #ffe98a;
+      --ink: #1a231d;
+      --muted: #45534a;
+      --white: #fffdf7;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #d8ddd1; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); }
+    .flyer { width: 1080px; min-height: 1350px; margin: 0 auto; overflow: hidden; background: var(--cream); position: relative; }
+    .leaf { position: absolute; opacity: .13; pointer-events: none; }
+    .leaf.one { width: 360px; right: -100px; top: 10px; transform: rotate(18deg); }
+    .leaf.two { width: 280px; left: -120px; bottom: 210px; transform: rotate(-26deg); }
+
+    .hero { height: 560px; position: relative; color: var(--white); overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, rgba(7,61,34,.98) 0%, rgba(10,90,51,.8) 46%, rgba(7,61,34,.18) 100%); z-index: 1; }
+    .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) contrast(1.04); }
+    .hero-content { position: relative; z-index: 2; padding: 76px 72px 54px; max-width: 790px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; text-transform: uppercase; letter-spacing: .16em; font-size: 17px; font-weight: 800; color: var(--mint); }
+    .eyebrow::before { content: ""; width: 34px; height: 4px; border-radius: 99px; background: var(--sand); }
+    h1 { font-size: 92px; line-height: .88; letter-spacing: -.065em; margin: 28px 0 22px; max-width: 700px; }
+    .hero h2 { font-size: 34px; line-height: 1.12; max-width: 610px; margin: 0; font-weight: 600; color: #effaf1; }
+    .hero p { font-size: 21px; line-height: 1.45; max-width: 625px; margin: 26px 0 0; color: rgba(255,253,247,.87); }
+    .mark { position: absolute; right: 70px; top: 68px; width: 112px; height: 112px; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; display: grid; place-items: center; text-align: center; font-size: 16px; line-height: 1.05; font-weight: 900; letter-spacing: .02em; color: var(--white); }
+    .mark span { display: block; font-size: 11px; font-weight: 600; margin-top: 6px; color: var(--mint); }
+
+    .promise { margin: -42px 72px 0; position: relative; z-index: 3; background: var(--white); border-radius: 28px; padding: 34px 38px 32px; box-shadow: 0 20px 42px rgba(7,61,34,.16); display: flex; gap: 32px; align-items: center; }
+    .promise-badge { flex: 0 0 94px; width: 94px; height: 94px; border-radius: 30px; background: var(--sand); display: grid; place-items: center; }
+    .promise-badge img { width: 72px; height: 72px; object-fit: contain; }
+    .promise h3 { margin: 0 0 7px; font-size: 30px; letter-spacing: -.025em; color: var(--green-950); }
+    .promise p { margin: 0; font-size: 19px; line-height: 1.42; color: var(--muted); }
+
+    .section { padding: 44px 72px 0; position: relative; z-index: 2; }
+    .section-kicker { color: var(--green-500); font-size: 16px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .section h3 { margin: 10px 0 28px; font-size: 39px; line-height: 1.05; letter-spacing: -.045em; color: var(--green-950); max-width: 700px; }
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .feature { min-height: 160px; padding: 24px; background: var(--white); border: 1px solid rgba(10,90,51,.1); border-radius: 22px; display: flex; gap: 16px; align-items: flex-start; }
+    .feature img { width: 62px; height: 62px; object-fit: contain; flex: 0 0 62px; }
+    .feature h4 { margin: 4px 0 8px; font-size: 22px; line-height: 1.05; color: var(--green-950); }
+    .feature p { margin: 0; font-size: 16px; line-height: 1.35; color: var(--muted); }
+
+    .gallery { margin: 46px 72px 0; height: 190px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 12px; }
+    .gallery { grid-template-rows: 100%; }
+    .gallery img { width: 100%; height: 100%; min-height: 0; object-fit: cover; border-radius: 22px; }
+    .gallery img:first-child { object-position: center 62%; }
+
+    .cta { margin: 44px 72px 0; background: var(--green-950); border-radius: 28px; padding: 34px 40px 38px; color: var(--white); display: flex; align-items: end; justify-content: space-between; gap: 32px; }
+    .cta h3 { margin: 0 0 10px; color: var(--white); font-size: 36px; line-height: 1; letter-spacing: -.045em; max-width: 600px; }
+    .cta p { margin: 0; color: var(--mint); font-size: 18px; line-height: 1.35; max-width: 600px; }
+    .cta-chip { background: var(--sand); color: var(--green-950); padding: 15px 19px; border-radius: 999px; white-space: nowrap; font-size: 16px; font-weight: 900; }
+
+    footer { padding: 28px 72px 42px; display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer strong { color: var(--green-800); font-size: 18px; }
+    footer span { max-width: 440px; text-align: right; line-height: 1.35; }
+    footer img { width: 150px; height: 32px; object-fit: contain; vertical-align: middle; margin-left: 8px; }
+
+    /* Mobile first: la pieza se lee como una historia vertical y se adapta al ancho disponible. */
+    .flyer { width: 100%; max-width: 1080px; min-height: 100svh; }
+    .hero { height: auto; min-height: 500px; }
+    .hero-content { padding: 106px 22px 42px; max-width: 100%; }
+    .eyebrow { font-size: 11px; letter-spacing: .11em; }
+    .eyebrow::before { width: 24px; height: 3px; }
+    h1 { font-size: clamp(60px, 18vw, 92px); margin: 24px 0 18px; }
+    .hero h2 { font-size: clamp(25px, 7vw, 34px); }
+    .hero p { font-size: 17px; margin-top: 20px; }
+    .mark { right: 22px; top: 28px; width: 78px; height: 78px; font-size: 12px; }
+    .mark span { font-size: 8px; }
+    .promise { margin: -28px 16px 0; padding: 22px; border-radius: 22px; gap: 14px; align-items: flex-start; }
+    .promise-badge { flex-basis: 66px; width: 66px; height: 66px; border-radius: 20px; }
+    .promise-badge img { width: 54px; height: 54px; }
+    .promise h3 { font-size: 23px; }
+    .promise p { font-size: 15px; }
+    .section { padding: 36px 22px 0; }
+    .section-kicker { font-size: 12px; }
+    .section h3 { font-size: 30px; margin-bottom: 20px; }
+    .features { grid-template-columns: 1fr; gap: 12px; }
+    .feature { min-height: 0; padding: 18px; border-radius: 18px; gap: 12px; }
+    .feature img { width: 54px; height: 54px; flex-basis: 54px; }
+    .feature h4 { font-size: 19px; margin-top: 2px; }
+    .feature p { font-size: 14px; }
+    .gallery { margin: 32px 22px 0; height: 120px; gap: 8px; }
+    .gallery img { border-radius: 14px; }
+    .cta { margin: 34px 22px 0; padding: 24px; border-radius: 22px; display: block; }
+    .cta h3 { font-size: 30px; }
+    .cta p { font-size: 16px; margin-top: 12px; }
+    .cta-chip { display: inline-block; margin-top: 22px; font-size: 14px; }
+    footer { padding: 24px 22px 34px; display: block; }
+    footer span { display: block; margin-top: 8px; text-align: left; font-size: 13px; }
+
+    @media (min-width: 700px) {
+      .hero { height: 560px; }
+      .hero-content { padding: 76px 72px 54px; max-width: 790px; }
+      .eyebrow { font-size: 17px; letter-spacing: .16em; }
+      .eyebrow::before { width: 34px; height: 4px; }
+      h1 { font-size: 92px; }
+      .hero h2 { font-size: 34px; }
+      .hero p { font-size: 21px; }
+      .mark { right: 70px; top: 68px; width: 112px; height: 112px; font-size: 16px; }
+      .mark span { font-size: 11px; }
+      .promise { margin: -42px 72px 0; padding: 34px 38px 32px; border-radius: 28px; gap: 32px; align-items: center; }
+      .promise-badge { flex-basis: 94px; width: 94px; height: 94px; border-radius: 30px; }
+      .promise-badge img { width: 72px; height: 72px; }
+      .promise h3 { font-size: 30px; }
+      .promise p { font-size: 19px; }
+      .section { padding: 44px 72px 0; }
+      .section-kicker { font-size: 16px; }
+      .section h3 { font-size: 39px; margin-bottom: 28px; }
+      .features { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .feature { min-height: 160px; padding: 24px; border-radius: 22px; gap: 16px; }
+      .feature img { width: 62px; height: 62px; flex-basis: 62px; }
+      .feature h4 { font-size: 22px; }
+      .feature p { font-size: 16px; }
+      .gallery { margin: 46px 72px 0; height: 190px; gap: 12px; }
+      .gallery img { border-radius: 22px; }
+      .cta { margin: 44px 72px 0; padding: 34px 40px 38px; display: flex; }
+      .cta h3 { font-size: 36px; }
+      .cta p { font-size: 18px; margin-top: 0; }
+      .cta-chip { margin-top: 0; font-size: 16px; }
+      footer { padding: 28px 72px 42px; display: flex; }
+      footer span { margin-top: 0; text-align: right; font-size: 14px; }
+    }
+
+    @media print {
+      html, body { background: #fff; }
+      .flyer { width: 1080px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="flyer">
+    <img class="leaf one" src="../assets/images/amazonia-colibri-clay.png" alt="" />
+    <img class="leaf two" src="../assets/images/amazonia-tucan-clay.png" alt="" />
+
+    <section class="hero">
+      <img class="hero-photo" src="../assets/images/tourism/panoramica-nocturna.jpg" alt="Yantzaza de noche" />
+      <div class="hero-content">
+        <div class="eyebrow">Propuesta de gobierno municipal</div>
+        <h1>Mi<br />Yantzaza</h1>
+        <h2>La ciudad que te escucha, te informa y te acompaña.</h2>
+        <p>Una plataforma para acercar los servicios municipales a cada barrio, cada familia y cada visitante.</p>
+      </div>
+      <div class="mark">MI<br />YANTZAZA<span>ciudad cercana</span></div>
+    </section>
+
+    <section class="promise">
+      <div class="promise-badge"><img src="../assets/images/amazonia-avatar-clay.png" alt="" /></div>
+      <div>
+        <h3>Una alcaldía más cercana</h3>
+        <p>Como parte de nuestra propuesta de gestión, Mi Yantzaza pondrá la tecnología al servicio de la ciudadanía: con información clara, atención sencilla y participación activa.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-kicker">Así se vive la propuesta</div>
+      <h3>Todo lo que necesitas para participar y disfrutar tu ciudad.</h3>
+      <div class="features">
+        <article class="feature"><img src="../assets/images/amazonia-servicios-clay.png" alt="" /><div><h4>Servicios en un solo lugar</h4><p>Consulta trámites, pagos municipales y soluciones de forma simple.</p></div></article>
+        <article class="feature"><img src="../assets/images/amazonia-reportar-clay.png" alt="" /><div><h4>Tu voz sí cuenta</h4><p>Reporta necesidades con foto, ubicación y seguimiento.</p></div></article>
+        <article class="feature"><img src="../assets/images/amazonia-rutas-clay.png" alt="" /><div><h4>Una ciudad que se mueve</h4><p>Consulta rutas, recolectores y tiempos de llegada en tu zona.</p></div></article>
+        <article class="feature"><img src="../assets/images/amazonia-tucan-clay.png" alt="" /><div><h4>Yantzaza se descubre</h4><p>Conoce balnearios, cascadas, cultura shuar y comunidad.</p></div></article>
+      </div>
+    </section>
+
+    <div class="gallery">
+      <img src="../assets/images/tourism/mirador-panecillo.jpg" alt="Mirador El Panecillo" />
+      <img src="../assets/images/tourism/chicana.jpg" alt="Parroquia Chicaña" />
+      <img src="../assets/images/tourism/balcones-floridos-caney.jpg" alt="San Vicente de Caney" />
+    </div>
+
+    <section class="cta">
+      <div><h3>Cuando Yantzaza avanza, todos participamos.</h3><p>Mi Yantzaza: una propuesta para construir una ciudad más conectada, transparente y cercana.</p></div>
+      <div class="cta-chip">Conoce la propuesta</div>
+    </section>
+
+    <footer><strong>Mi Yantzaza</strong><span>Propuesta de gobierno municipal · Tecnología al servicio de la ciudadanía<br>Propuesta desarrollada por Nekatek Labs S.A.S. <img src="../assets/nekatek-logo.svg" alt="Nekatek Labs S.A.S"></span></footer>
+  </main>
+</body>
+</html>

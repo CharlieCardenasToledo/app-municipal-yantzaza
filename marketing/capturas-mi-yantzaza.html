@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Yantzaza · Capturas principales</title>
+  <style>
+    :root { --deep:#073d22; --green:#0a5a33; --mint:#d3f0da; --cream:#f7f6ef; --sand:#ffe98a; --ink:#1a231d; --muted:#45534a; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--cream); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+    .page { width:100%; max-width:1080px; margin:auto; padding:30px 20px 50px; }
+    header { background:var(--deep); color:white; border-radius:24px; padding:28px 24px; margin-bottom:22px; }
+    header small { color:var(--mint); text-transform:uppercase; font-weight:900; letter-spacing:.12em; }
+    header h1 { margin:12px 0 8px; font-size:38px; line-height:1; letter-spacing:-.05em; }
+    header p { margin:0; color:var(--mint); line-height:1.4; }
+    .grid { display:grid; grid-template-columns:1fr; gap:18px; }
+    .card { background:#fffdf7; border-radius:20px; padding:14px; box-shadow:0 12px 28px rgba(7,61,34,.1); }
+    .card h2 { color:var(--green); font-size:20px; margin:0 0 11px; }
+    .screen { object-fit:cover; object-position:top;  width:100%; aspect-ratio:390 / 844; border:0; border-radius:14px; background:white; display:block; box-shadow:inset 0 0 0 1px rgba(10,90,51,.14); }
+    @media (min-width:760px) { .page { padding:54px 40px 70px; } .grid { grid-template-columns:repeat(2,1fr); } .card:last-child { grid-column:span 2; max-width:50%; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header><small>Mi Yantzaza · propuesta de gobierno municipal</small><h1>Así se ve por dentro</h1><p>Capturas principales de la experiencia que tendrá la ciudadanía en la aplicación.</p><p style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;">Propuesta desarrollada por Nekatek Labs S.A.S. <img src="../assets/nekatek-logo.svg" alt="Nekatek Labs S.A.S" style="width:120px;height:24px;object-fit:contain;background:#fff;border-radius:6px;padding:4px;"></p></header>
+    <section class="grid">
+      <article class="card"><h2>Inicio y servicios</h2><img class="screen" src="real-app-dashboard.png" alt="Pantalla de inicio"></article>
+      <article class="card"><h2>Reportes ciudadanos</h2><img class="screen" src="real-app-incidents.png" alt="Pantalla de reportes"></article>
+      <article class="card"><h2>Pagos municipales</h2><img class="screen" src="real-app-payments.png" alt="Pantalla de pagos"></article>
+      <article class="card"><h2>Rutas y recolector</h2><img class="screen" src="real-app-maps.png" alt="Pantalla de rutas"></article>
+      <article class="card"><h2>Turismo local</h2><img class="screen" src="real-app-tourism.png" alt="Pantalla de turismo"></article>
+    </section>
+  </main>
+</body>
+</html>

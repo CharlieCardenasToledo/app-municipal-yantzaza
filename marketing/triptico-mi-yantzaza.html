@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tríptico · Mi Yantzaza</title>
+  <style>
+    :root { --deep:#073d22; --green:#0a5a33; --mint:#d3f0da; --cream:#f7f6ef; --sand:#ffe98a; --ink:#1a231d; --muted:#45534a; --white:#fffdf7; }
+    * { box-sizing:border-box; }
+    html,body { margin:0; background:#d8ddd1; color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+    .brochure { width:100%; max-width:1500px; margin:auto; background:var(--cream); }
+    .sheet { display:grid; grid-template-columns:1fr; }
+    .panel { min-height:600px; padding:30px 24px; position:relative; overflow:hidden; border-bottom:1px solid rgba(10,90,51,.14); }
+    .panel h1,.panel h2,.panel h3,.panel p { position:relative; z-index:1; }
+    .cover { min-height:560px; color:var(--white); background:linear-gradient(155deg,rgba(7,61,34,.95),rgba(10,90,51,.62)),url('../assets/images/tourism/panoramica-nocturna.jpg') center/cover; display:flex; flex-direction:column; justify-content:end; }
+    .cover .mini { color:var(--mint); text-transform:uppercase; letter-spacing:.13em; font-size:12px; font-weight:900; }
+    .cover h1 { font-size:68px; line-height:.86; letter-spacing:-.07em; margin:24px 0 16px; }
+    .panel.cover p { font-size:22px; line-height:1.25; color:#effaf1; max-width:390px; }
+    .cover .seal { position:absolute; right:24px; top:24px; border:1px solid rgba(255,255,255,.45); border-radius:50%; width:78px; height:78px; display:grid; place-items:center; text-align:center; font-weight:900; font-size:12px; line-height:1; }
+    .cover .seal span { display:block; font-size:8px; color:var(--mint); margin-top:4px; }
+    .panel h2 { color:var(--deep); font-size:31px; line-height:1; letter-spacing:-.045em; margin:8px 0 18px; }
+    .panel h3 { color:var(--green); font-size:20px; margin:20px 0 7px; }
+    .panel p { color:var(--muted); font-size:16px; line-height:1.42; margin:0 0 14px; }
+    .panel.dark { color:var(--white); background:var(--deep); }
+    .panel.dark h2 { color:var(--white); }
+    .panel.dark p { color:var(--mint); }
+    .panel.dark h3 { color:var(--sand); }
+    .panel-photo { width:calc(100% + 48px); height:220px; object-fit:cover; margin:-30px -24px 26px; }
+    .icon-row { display:flex; gap:14px; align-items:center; margin:18px 0; }
+    .icon-row img { width:60px; height:60px; object-fit:contain; }
+    .icon-row strong { display:block; color:var(--deep); font-size:18px; }
+    .dark .icon-row strong { color:var(--white); }
+    .icon-row span { display:block; color:var(--muted); font-size:14px; margin-top:3px; }
+    .dark .icon-row span { color:var(--mint); }
+    .quote { border-left:4px solid var(--sand); padding-left:16px; margin-top:26px; color:var(--green); font-size:22px; font-weight:800; line-height:1.15; }
+    .dark .quote { color:var(--sand); }
+    .pill { display:inline-block; padding:10px 15px; border-radius:999px; background:var(--sand); color:var(--deep); font-weight:900; font-size:13px; margin-top:10px; }
+    .stamp { position:absolute; bottom:24px; right:24px; width:110px; opacity:.85; }
+    .app-preview { padding:28px 24px 38px; background:var(--green); color:var(--white); }
+    .app-preview h2 { color:var(--white); margin:0 0 8px; }
+    .app-preview p { color:var(--mint); max-width:600px; }
+    .preview-grid { display:grid; grid-template-columns:1fr; gap:14px; margin-top:18px; }
+    .preview-card { background:var(--white); border-radius:18px; padding:10px; color:var(--deep); }
+    .preview-card strong { display:block; padding:4px 5px 9px; font-size:14px; }
+    .preview-card img { object-fit:cover; object-position:top;  width:100%; aspect-ratio:390 / 844; border:0; border-radius:12px; display:block; background:var(--cream); }
+    @media (min-width:760px) {
+      .sheet { grid-template-columns:repeat(3,1fr); }
+      .panel { min-height:700px; padding:40px 34px; border-right:1px dashed rgba(10,90,51,.24); border-bottom:0; }
+      .cover { min-height:700px; }
+      .panel-photo { width:calc(100% + 68px); margin:-40px -34px 30px; height:250px; }
+      .app-preview { padding:44px 34px 52px; }
+      .preview-grid { grid-template-columns:repeat(3,1fr); gap:18px; }
+      .cover h1 { font-size:72px; }
+    }
+    @media print { html,body { background:#fff; } .brochure { max-width:none; } .sheet { grid-template-columns:repeat(3,1fr); } .panel { min-height:700px; } }
+  </style>
+</head>
+<body>
+  <main class="brochure">
+    <section class="sheet">
+      <article class="panel cover"><div class="seal">MI<br>YANTZAZA<span>ciudad cercana</span></div><div class="mini">Propuesta de gobierno municipal</div><h1>Mi<br>Yantzaza</h1><p>La ciudad que te escucha, te informa y te acompaña.</p></article>
+      <article class="panel"><img class="panel-photo" src="../assets/images/tourism/mirador-panecillo.jpg" alt="Mirador El Panecillo"><h2>Una alcaldía más cercana</h2><p>Mi Yantzaza pone la tecnología al servicio de las personas para que la gestión municipal sea más clara, sencilla y accesible.</p><div class="quote">La ciudad también se construye cuando participas.</div><img class="stamp" src="../assets/images/amazonia-colibri-clay.png" alt=""></article>
+      <article class="panel dark"><h2>Todo en un solo lugar</h2><div class="icon-row"><img src="../assets/images/amazonia-servicios-clay.png" alt=""><div><strong>Servicios municipales</strong><span>Trámites, pagos e información clara.</span></div></div><div class="icon-row"><img src="../assets/images/amazonia-reportar-clay.png" alt=""><div><strong>Reportes ciudadanos</strong><span>Foto, ubicación y seguimiento.</span></div></div><div class="icon-row"><img src="../assets/images/amazonia-rutas-clay.png" alt=""><div><strong>Movilidad y rutas</strong><span>Recolectores, tiempos y destinos.</span></div></div><span class="pill">Tecnología con sentido humano</span></article>
+    </section>
+    <section class="sheet">
+      <article class="panel"><img class="panel-photo" src="../assets/images/tourism/chicana.jpg" alt="Parroquia Chicaña"><h2>Yantzaza se descubre</h2><p>Una guía para disfrutar balnearios, cascadas de Chicaña, ayampacos y lugares turísticos.</p><div class="icon-row"><img src="../assets/images/amazonia-tucan-clay.png" alt=""><div><strong>Turismo local</strong><span>Historias, rutas y experiencias para compartir.</span></div></div></article>
+      <article class="panel"><img class="panel-photo" src="../assets/images/tourism/nankais.jpg" alt="Centro Cultural Nankais"><h2>Una ciudad que reconoce lo suyo</h2><p>La identidad de Yantzaza vive en sus comunidades shuar, saraguro y mestiza, en la luciérnaga de su escudo y en la riqueza amazónica que compartimos.</p><div class="quote">Cuidar nuestra identidad es proyectar nuestro futuro.</div></article>
+      <article class="panel dark"><h2>Cuando Yantzaza avanza, todos participamos.</h2><p>Mi Yantzaza: una propuesta para construir una ciudad más conectada, transparente y cercana.</p><span class="pill">Conoce la propuesta</span><div style="position:absolute;bottom:32px;left:34px;right:34px;color:#d3f0da;font-size:13px;line-height:1.35;">Propuesta de gobierno municipal<br>Mi Yantzaza · Tecnología al servicio de la ciudadanía<br>Propuesta desarrollada por Nekatek Labs S.A.S.<br><img src="../assets/nekatek-logo.svg" alt="Nekatek Labs S.A.S" style="width:145px;height:28px;object-fit:contain;background:#fff;border-radius:6px;padding:4px;margin-top:8px;"></div></article>
+    </section>
+    <section class="app-preview"><h2>Así se ve por dentro</h2><p>Una experiencia sencilla para atender, informar y conectar a la ciudadanía.</p><div class="preview-grid"><div class="preview-card"><strong>Inicio</strong><img src="real-app-dashboard.png" alt="Captura de inicio"></div><div class="preview-card"><strong>Reportes ciudadanos</strong><img src="real-app-incidents.png" alt="Captura de reportes"></div><div class="preview-card"><strong>Pagos municipales</strong><img src="real-app-payments.png" alt="Captura de pagos"></div></div></section>
+  </main>
+</body>
+</html>
